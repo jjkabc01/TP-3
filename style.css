@@ -1,0 +1,35 @@
+
+
+#logo {
+    height: 100px;
+    width: 100px;
+    
+    margin: -13px -5px 0;
+}
+ 
+
+#etat_connexion{
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+ 
+.erreur 
+{
+    text-align: center;
+    color : red;
+ }
+
+.copy{
+
+    dispaly:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+ 
+ .imagemembre img { 
+ 	width : 150px; 
+ 	height : 150px;
+ }
