@@ -31,7 +31,7 @@ if (isset($_GET['NO_MEMBRE']))  {
     //on affiche le début d'une ligne d'un tableau html
     echo "<tr>\n";
     //On affiche le heading 
-    echo "<th> Numero Membre </th>\n";
+    echo "<th> Numero Membre : </th>\n";
     //On affiche la valeur correspondant au heading
     echo " <td>".$NO_MEMBRE."</td>\n";
     //on affiche la fin de la ligne d'un tableau html
@@ -40,7 +40,7 @@ if (isset($_GET['NO_MEMBRE']))  {
     //on affiche le début d'une ligne d'un tableau html
     echo "<tr>\n";
     //On affiche le heading
-    echo "<th> Utilisateur </th>\n";
+    echo "<th> Utilisateur : </th>\n";
     //On affiche la valeur correspondant au heading
     echo "<td>".$Utilisateur."</td>\n";
     //on affiche la fin de la ligne d'un tableau html
@@ -49,7 +49,7 @@ if (isset($_GET['NO_MEMBRE']))  {
     //on affiche le début d'une ligne d'un tableau html
     echo "<tr>\n";
     //On affiche le heading
-    echo "<th>Nom</th>\n";
+    echo "<th> Nom : </th>\n";
     //On affiche la valeur correspondant au heading
     echo "<td>".$Nom."</td>\n";
     //on affiche la fin de la ligne d'un tableau html
@@ -58,7 +58,7 @@ if (isset($_GET['NO_MEMBRE']))  {
     //on affiche le début d'une ligne d'un tableau html
     echo "<tr>\n";
     //On affiche le heading
-    echo "<th>Prénom</th>\n";
+    echo "<th> Prénom : </th>\n";
     //On affiche la valeur correspondant au heading
     echo "<td>".$Prenom."</td>\n";
     //on affiche la fin de la ligne d'un tableau html
@@ -67,7 +67,7 @@ if (isset($_GET['NO_MEMBRE']))  {
     //on affiche le début d'une ligne d'un tableau html
     echo "<tr>\n";
     //On affiche le heading
-    echo "<th>Adresse</th>\n";
+    echo "<th> Adresse : </th>\n";
     //On affiche la valeur correspondant au heading
     echo "<td>".$Adresse."</td>\n";
     //on affiche la fin de la ligne d'un tableau html
@@ -76,7 +76,7 @@ if (isset($_GET['NO_MEMBRE']))  {
     //on affiche le début d'une ligne d'un tableau html
     echo "<tr>\n";
     //On affiche le heading
-    echo "<th>Langue</th>\n";
+    echo "<th> Langue :</th>\n";
     //On affiche la valeur correspondant au heading
     echo " <td>".$Langue."</td>\n";
     //on affiche la fin de la ligne d'un tableau html
@@ -85,7 +85,7 @@ if (isset($_GET['NO_MEMBRE']))  {
     //on affiche le début d'une ligne d'un tableau html
     echo "<tr>\n";
     //On affiche le heading
-    echo "<th>Photo</th>\n";
+    echo "<th> Photo :</th>\n";
     //On affiche la valeur correspondant au heading
     echo "<td class='imagemembre'><img src='.".$Photo."' /></td> \n";
     //on affiche la fin de la ligne d'un tableau html
