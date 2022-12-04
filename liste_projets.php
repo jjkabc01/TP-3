@@ -17,7 +17,10 @@ if(isset($_POST['archiver']) && isset($_POST['date_archive'])){
     $DATE_ARCHIVE = $_POST['date_archive'];
     $UTILISATEUR_MEM = $_SESSION['UTILISATEUR_MEM'];
     //Commande d'archivage et exécution de celle-ci
-    $stid = oci_parse($conn, "begin TP3_SP_ARCHIVER_PROJET(to_date('$DATE_ARCHIVE','RR-MM-DD'),'$UTILISATEUR_MEM'); end;");
+    //$stid = oci_parse($conn, "begin TP3_SP_ARCHIVER_PROJET(to_date('$DATE_ARCHIVE','RR-MM-DD'),'$UTILISATEUR_MEM'); end;");
+    $stid = oci_parse($conn, "begin TP3_SP_ARCHIVER_PROJET(to_date(:p1,'RR-MM-DD'), :p2); end;");
+    oci_bind_by_name($stid , ':p1', $DATE_ARCHIVE);
+    oci_bind_by_name($stid , ':p2', $UTILISATEUR_MEM);
     oci_execute($stid);
     
 }
