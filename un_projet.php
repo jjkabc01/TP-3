@@ -3,6 +3,7 @@ $proteger = true;
 
 include('header.php');
 
+$erreur;
 
 if(isset($_POST['bouton_annuler'])){
     header('Location: liste_projets.php');
@@ -32,7 +33,19 @@ if(isset($_POST['bouton_ok']) && isset($_POST['NOM_PRO']) && isset($_POST['MNT_A
                               values (NO_PROJET_SEQ.nextval, '$NOM_PRO', '$MNT_ALLOUE_PRO', '$STATUT_PRO', to_date('$DATE_DEBUT_PRO','RR-MM-DD'), to_date('$DATE_FIN_PRO','RR-MM-DD') ) ");
     
     oci_execute($stid);
-    header('Location: liste_projets.php');    
+   
+    $erreur = oci_error($stid);
+    
+    if($erreur['code']===1){
+        $erreur = "Violation d'un attribut unique: le nom du projet existe déjà";
+        echo '<div class="erreur">'. $erreur . '</div>';
+    }
+    else
+    {
+        header('Location: liste_projets.php');    
+    }
+        
+    
 }
 
 
@@ -49,13 +62,34 @@ if(isset($_POST['bouton_ok']) && isset($_POST['NOM_PRO']) && isset($_POST['MNT_A
                               set NOM_PRO ='$NOM_PRO', MNT_ALLOUE_PRO = '$MNT_ALLOUE_PRO', STATUT_PRO='$STATUT_PRO', DATE_DEBUT_PRO ='$DATE_DEBUT_PRO', DATE_FIN_PRO = '$DATE_FIN_PRO'
                               where NO_PROJET = '$NO_PROJET' ");
     oci_execute($stid);
-    header('Location: liste_projets.php');
+    
+    $erreur = oci_error($stid);
+    
+    if($erreur['code']===1){
+        $erreur = "Violation d'un attribut unique: le nom du projet existe déjà";
+        $_SESSION['erreur_update'] = $erreur;
+        $NO_PROJET = $_SESSION['no_projet_updated'];
+        header('Location: un_projet.php?NO_PROJET='.$NO_PROJET);
+        
+    }
+    else
+    {
+        header('Location: liste_projets.php');
+    }
+    
 }
 
 
 if(isset($_GET['NO_PROJET'])){
     echo '<div><h2> Modifier le Projet </h2></div>';
     
+    if($_SESSION['erreur_update'])
+    {
+        echo '<div class="erreur">'. $_SESSION['erreur_update']. '</div>';
+        $_SESSION['erreur_update'] ="";
+    }
+        
+    $_SESSION['no_projet_updated'] = $_GET['NO_PROJET'];
     $_SESSION['update'] = true;
     
     $NO_PROJET = $_GET['NO_PROJET'];
