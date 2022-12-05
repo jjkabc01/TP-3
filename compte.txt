@@ -1,6 +1,6 @@
 #### Compte administrateur ###
 Nom utilisateur: jean.tremblay
-Mot de passe : NYYaFjyxtS|Ul7
+Mot de passe : RhIapMqMWG/4w8
 
 ### Compte superviseur ###
 Nom utilisateur: eric.gagnon
