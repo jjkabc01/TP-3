@@ -64,7 +64,6 @@ create table TP2_PROJET (
   constraint PK_TP2_PROJET primary key (NO_PROJET),
   constraint AK_TP2_PROJET_NOM_PRO unique (NOM_PRO),
   constraint CT_STATUT_PRO check (STATUT_PRO in ('Accepté', 'En correction', 'Préliminaire', 'Intermédiaire', 'Final', 'Terminé')),
-  constraint CT_MNT_ALLOUE_PRO_SUPERIEUR_EGAL_0 check(MNT_ALLOUE_PRO >= 0),
   constraint CT_DATE_FIN_PRO_SUPERIEUR_DATE_DEBUT_PRO check (DATE_FIN_PRO > DATE_DEBUT_PRO)
   
 );
